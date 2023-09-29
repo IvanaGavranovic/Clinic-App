@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="17ac10f9cfe442a0a64abab328dd2d00" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="ClinicDBModel.Departman" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Dijagnoza_Specijaliste" Width="1.5" PointX="12.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Doktor_Departman" Width="1.5" PointX="4.625" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Doktor_op_pr_Pregled_Pacijent" Width="3.125" PointX="1.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Doktor_specijalista_Uput" Width="1.5" PointX="10.625" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Doktor" Width="1.5" PointX="6.875" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Ishod_Pregleda" Width="3.125" PointX="5.375" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Ishod_Pregleda_Dijagnoza" Width="2.375" PointX="10.375" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Ishod_Pregleda_Uput" Width="2" PointX="14.625" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Klinika_Departman" Width="1.5" PointX="2.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Klinika" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Pacijent_Departman" Width="1.5" PointX="9.625" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Pacijent" Width="1.5" PointX="13.875" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Pregled" Width="3.625" PointX="4.625" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Terapija_Specijaliste" Width="1.5" PointX="15" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Terapija" Width="1.5" PointX="12.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Ugovor" Width="1.5" PointX="2.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDBModel.Zdravstveni_Karton" Width="4" PointX="17" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="ClinicDBModel.FK_Klinika_DepartmanDepartman" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicDBModel.FK_Doktor_DepartmanKlinika_Departman" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicDBModel.FK_Doktor_DepartmanUgovor" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicDBModel.FK_Klinika_DepartmanPacijent_Departman" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicDBModel.FK_KlinikaKlinika_Departman" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicDBModel.FK_Zdravstveni_KartonPacijent_Departman" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ClinicDBModel.Korisnik" Width="1.5" PointX="10.25" PointY="0.5" />
+        <AssociationConnector Association="ClinicDBModel.PacijentPacijent_Departman" />
+        <InheritanceConnector EntityType="ClinicDBModel.Doktor" />
+        <InheritanceConnector EntityType="ClinicDBModel.Pacijent" />
+        <AssociationConnector Association="ClinicDBModel.DoktorDoktor_Departman" />
+        <AssociationConnector Association="ClinicDBModel.Doktor_op_pr_Pregled_PacijentPregled" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="ClinicApp.View.NewViews.AddNewReview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ClinicApp.View.All"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="900">
+    <Grid>
+        <!--Tabela-->
+        <Border Name="Border1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="450" Height="450">
+            <Grid Background="Transparent" Height="450" >
+                <!--Naslov-->
+                <Label Content="Lista zakazanih pregleda" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Height="37" VerticalAlignment="Top" FontFamily="Segoe UI" Foreground="#009999" Background="#f8f8ff" FontSize="20" FontWeight="SemiBold"/>
+                <DataGrid ItemsSource="{Binding Pregledi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedIndex="{Binding CurrentIndex}"
+                      SelectedItem="{Binding SelectedItem}"
+                      Background="{x:Null}" 
+                      BorderBrush="White"
+                      RowHeight="26"
+                      ColumnHeaderHeight="32"
+                      HorizontalGridLinesBrush="White"
+                      VerticalGridLinesBrush="White"
+                      FontSize="18"
+                      Foreground="#006666"                    
+                      FontFamily="Segoe UI"
+                      CanUserAddRows="false"
+					  CanUserDeleteRows="False"
+					  SelectionMode="Single"
+					  CanUserResizeColumns="False"
+					  IsReadOnly="true"
+					  AutoGenerateColumns="False"                        
+					  HeadersVisibility="Column" 
+                      Margin="0,50,0,70" >
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Style>
+                    </DataGrid.Resources>
+                    <!--1. red u tabeli-->
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Doktor"   Width="*" Binding="{Binding ImeDoktora,   UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Foreground="#006666" FontSize="14"/>
+                        <DataGridTextColumn Header="Termin"   Width="*" Binding="{Binding TerminPregleda,  UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Foreground="#006666" FontSize="14"/>
+                        <DataGridTextColumn Header="Obavljen" Width="*" Binding="{Binding Obavljen, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Foreground="#006666" FontSize="14"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <!--Obriši-->
+                <Button Name ="DeleteButton" Content="Obrišite" HorizontalAlignment="Left" Height="30" Margin="217,330,0,0" VerticalAlignment="Top" Width="233" FontFamily="Segoe UI" Background="#f8f8ff" Foreground="#009999" BorderBrush="White" FontSize="18" IsEnabled="{Binding BtnEnable}" Command="{Binding DeleteCommand}"/>
+                <!--Izmeni-->
+                <Button Name="UpdateButton"  Content="Izmenite" HorizontalAlignment="Left" Height="30" Margin="0,330,0,0" VerticalAlignment="Top" Width="217" FontFamily="Segoe UI" Background="#f8f8ff" Foreground="#009999" BorderBrush="White" FontSize="18" IsEnabled="{Binding BtnEnable}" Command="{Binding ChangeCommand}"/>
+            </Grid>
+        </Border>
+        <!--Forma za dodavanje-->
+        <Border Name="Border2" VerticalAlignment="Top" Width="450" Height="368" BorderBrush="White" BorderThickness="1" Margin="477,10,23,0">
+            <Grid Background="Transparent" Height="440" VerticalAlignment="Top">
+                <!--Naslov-->
+                <Label Content="Zakažite novi pregled" Margin="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Height="37" VerticalAlignment="Top" FontFamily="Segoe UI" Foreground="#009999" Background="#f8f8ff" FontSize="20" FontWeight="SemiBold"/>
+                <!--Doktor-->
+                <Label  Content="Doktor:"  HorizontalAlignment="Left" Height="40" Margin="20,40,0,0"  VerticalAlignment="Top" Width="100" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+                <ComboBox ItemsSource="{Binding ListaDoktora}" SelectedItem="{Binding SelectedType1}" Height="30" Width="202" Margin="170,45,76,365" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+                <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="170,77,15,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Doktor]}" Foreground="Red"/>
+                <!--Termin(Vreme)-->
+                <Label  Content="Slobodni termini:"  HorizontalAlignment="Left" Height="40" Margin="20,135,0,0"  VerticalAlignment="Top" Width="145" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+                <ComboBox ItemsSource="{Binding ListaTermina}" SelectedItem="{Binding SelectedType2, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Margin="170,140,76,270" Height="30" Width="202" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+                <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="170,175,15,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Vreme]}" Foreground="Red"/>
+
+                <Button Content="{Binding BtnContent}" HorizontalAlignment="Left" Height="30" Margin="-2,318,0,0" VerticalAlignment="Top" Width="450" FontFamily="Segoe UI" Background="#f8f8ff" Foreground="#009999" BorderBrush="White" FontSize="18" Command="{Binding AddCommand}"/>
+            </Grid>
+        </Border>
+    </Grid>
+
+</UserControl>

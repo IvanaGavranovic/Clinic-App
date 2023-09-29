@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="ClinicApp.View.NewViews.GeneralPracticionerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ClinicApp.View.NewViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="940">
+    <Grid>
+        <Button  FontFamily="Segoe UI" Foreground="#009999" Background="#f8f8ff" FontSize="18" FontWeight="SemiBold" BorderBrush="White" Command="{Binding LogOutCommand}" Content="Odjavite se" Margin="777,10,10,458"  />
+        <!--Tabovi-->
+        <DockPanel Width="930" Background="Transparent" HorizontalAlignment="Left" Margin="0,40,0,0" Height="450">
+            <Menu DockPanel.Dock="Left" Width="920" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
+                <TabControl SelectedIndex="{Binding SelectedTab1}" Background="Transparent" BorderBrush="Transparent" Height="472" Width="920">
+                    <TabItem Background="Transparent" FontFamily="Segoe UI" FontSize="18" Foreground="#009999" BorderBrush="White" Height="30" Width="180" Content="{Binding ListReviewTab}" Header="Raspored pregleda"/>
+                    <!--<TabItem Background="Transparent" FontFamily="Segoe UI" FontSize="18" Foreground="#009999" BorderBrush="White" Height="30" Width="180" Content="{Binding ReviewTab}" Header="Izveštaj sa pregleda"/>
+                    <TabItem Background="Transparent" FontFamily="Segoe UI" FontSize="18" Foreground="#009999" BorderBrush="White" Height="30" Width="180" Content="{Binding TherapyTab}" Header="Terapija"/>
+                    <TabItem Background="Transparent" FontFamily="Segoe UI" FontSize="18" Foreground="#009999" BorderBrush="White" Height="30" Width="180" Content="{Binding ReferralTab}" Header="Uput"/>-->
+
+                </TabControl>
+            </Menu>
+        </DockPanel>
+    </Grid>
+</UserControl>

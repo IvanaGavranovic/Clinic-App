@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="ClinicApp.View.All.RegistrationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ClinicApp.View.All"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Label Content="Registrujte se u sistem" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Height="37" VerticalAlignment="Top" FontFamily="Segoe UI" Foreground="#009999" Background="#f8f8ff" FontSize="20" FontWeight="SemiBold"/>
+        <!--Username-->
+        <Label  Content="Korisničko ime:"  HorizontalAlignment="Left" Height="40" Margin="15,60,0,0"  VerticalAlignment="Top" Width="130" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="username"   HorizontalAlignment="Left" Height="30" Margin="150,60,0,0" VerticalAlignment="Top" Width="200" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="130,90,385,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Username]}" Foreground="Red"/>
+        <!--Password-->
+        <Label  Content="Lozinka:" HorizontalAlignment="Left" Height="40" Margin="420,60,0,0"  VerticalAlignment="Top" Width="100" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="password"   HorizontalAlignment="Left" Height="30" Margin="530,54,0,0" VerticalAlignment="Top" Width="200" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="530,90,10,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Password]}" Foreground="Red"/>
+        <!--E-mail-->
+        <Label  Content="E-mail:" HorizontalAlignment="Left" Height="40" Margin="20,115,0,0"  VerticalAlignment="Top" Width="80" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="email"  HorizontalAlignment="Left" Height="30" Margin="150,115,0,0" VerticalAlignment="Top" Width="400" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="130,145,70,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Email]}" Foreground="Red"/>
+        <!--Name-->
+        <Label  Content="Ime:"  HorizontalAlignment="Left" Height="40" Margin="15,170,0,0"  VerticalAlignment="Top" Width="90" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="nameTextBox"   HorizontalAlignment="Left" Height="30" Margin="150,170,0,0" VerticalAlignment="Top" Width="200" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="530,200,10,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Name]}" Foreground="Red"/>
+        <!--Lastname-->
+        <Label  Content="Prezime:" HorizontalAlignment="Left" Height="40" Margin="420,170,0,0"  VerticalAlignment="Top" Width="100" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="lastname"  HorizontalAlignment="Left" Height="30" Margin="530,170,0,0" VerticalAlignment="Top" Width="200" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="130,200,390,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Lastname]}" Foreground="Red"/>
+        <!--Contact-->
+        <Label  Content="Kontakt telefon:" HorizontalAlignment="Left" Height="40" Margin="15,225,0,0"  VerticalAlignment="Top" Width="135" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="contact"  HorizontalAlignment="Left" Height="30" Margin="150,225,0,0" VerticalAlignment="Top" Width="200" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding Contact, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="130,255,270,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Contact]}" Foreground="Red"/>
+        <!--City-->
+        <Label  Content="Grad:" HorizontalAlignment="Left" Height="40" Margin="15,280,0,0"  VerticalAlignment="Top" Width="90" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="city"  HorizontalAlignment="Left" Height="30" Margin="150,280,0,0" VerticalAlignment="Top" Width="200" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding City, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="130,310,395,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[City]}" Foreground="Red"/>
+        <!--Street-->
+        <Label  Content="Ulica:" HorizontalAlignment="Left" Height="40" Margin="360,280,0,0"  VerticalAlignment="Top" Width="70" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="street"  HorizontalAlignment="Left" Height="30" Margin="420,280,0,0" VerticalAlignment="Top" Width="200" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding Street, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="410,310,115,0" Height="25" TextWrapping="Wrap" Text="{Binding ValidationErrors[Street]}" Foreground="Red"/>
+        <!--Number-->
+        <Label  Content="Broj:" HorizontalAlignment="Left" Height="40" Margin="625,280,0,0"  VerticalAlignment="Top" Width="50" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <TextBox x:Name="number"  HorizontalAlignment="Left" Height="30" Margin="678,280,0,0" VerticalAlignment="Top" Width="50" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="16" BorderBrush="White" TextWrapping="Wrap" Text="{Binding Number, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" RenderTransformOrigin="0.127,0.592"/>
+        <TextBlock VerticalAlignment="Top" FontSize="14" TextAlignment="Left" Margin="720,310,0,0" Height="112" TextWrapping="Wrap" Text="{Binding ValidationErrors[Number]}" Foreground="Red"/>
+        <!--Role-->
+        <Label  Content="Uloga:" HorizontalAlignment="Left" Height="40" Margin="15,335,0,0"  VerticalAlignment="Top" Width="90" Background="Transparent" FontFamily="Segoe UI" Foreground="#006666" FontSize="18"/>
+        <RadioButton GroupName="Role" Content="Pacijent" FontSize="18" Margin="130,340,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Foreground="#006666" Width="120" IsChecked="True" RenderTransformOrigin="0.367,2.4"/>
+        <RadioButton GroupName="Role" Content="Doktor" FontSize="18" Margin="255,340,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Foreground="#006666" Width="121" IsChecked="{Binding IsDoctor}" RenderTransformOrigin="0.463,1.383"/>
+
+        <!--Register-->
+        <Button Content="Registrujte se" HorizontalAlignment="Left" Height="30" Margin="187,392,0,0" VerticalAlignment="Top" Width="423" FontFamily="Segoe UI" Background="#f8f8ff" Foreground="#009999" BorderBrush="White" FontSize="18" Command="{Binding RegisterCommand}"/>
+
+    </Grid>
+</UserControl>
